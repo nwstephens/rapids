@@ -1,0 +1,1 @@
+The [babynames](babynames.ipynb) notebook compares performance between a single GPU and a single CPU. All tests showed double digit performance improvements when run on a Tesla P4. Results will vary depending on the system environment. Click here to [download](https://www.ssa.gov/oact/babynames/state/namesbystate.zip) the data.

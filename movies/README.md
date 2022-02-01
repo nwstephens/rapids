@@ -1,0 +1,1 @@
+The [movies](movies.ipynb) notebook compares the cuDF API to the Pandas API. In many cases switching code from CPU to GPU is seamless. In other cases some adjustments are required. Click here to [download](https://bsql.s3.amazonaws.com/data/rapids_intro/movies.csv) the data.

@@ -1,0 +1,38 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{python}
+import time
+import pandas as pd
+import numpy as np
+```
+
+### Read data using Pandas
+
+```{python}
+pd.DataFrame({'a': [0]});
+pdf = pd.read_csv('app/namesbystate.csv', names=["state", "sex", "year", "name", "rank"])
+print("Records:", len(pdf))
+```
+## Aggregate using Pandas
+
+```{python}
+print(pdf.groupby(["year", "name", "sex"]).count())
+```
+### Simple linear model with Pandas
+
+```{python}
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
+
+lr = LinearRegression(fit_intercept=True, normalize=False)
+lr.fit(np.array([0,1.0]).reshape(-1, 1),np.array([0,1.0]))
+
+X = pdf[['year']]
+y = pdf['name'].str.len()
+x_train, x_test, y_train, y_test = train_test_split(X, y, test_size=0.1)
+model = lr.fit(x_train, y_train)
+lr.predict(x_test)
+```
